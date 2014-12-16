@@ -7,7 +7,7 @@ RUN yum -y update; yum clean all
 RUN yum -y install traceroute net-tools ntp python-setuptools
 RUN easy_install supervisor 
 RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-repo-0.5-3.noarch.rpm
-RUN yum -y install iperf3 nuttcp bwctl owamp iperf
+RUN yum -y install perfSONAR_PS-Bundles-Level1
 RUN mkdir -p /var/log/supervisor 
 ADD supervisord.conf /etc/supervisord.conf
 

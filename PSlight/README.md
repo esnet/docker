@@ -1,7 +1,7 @@
 ## perfSONAR Light docker container
 
 The docker container runs all perfSONAR light services.
-See: 
+See: https://code.google.com/p/perfsonar-ps/wiki/Level1and2Install 
 
 build the container (in the directory containing 'Dockerfile')
 >docker build -t ps_light .
