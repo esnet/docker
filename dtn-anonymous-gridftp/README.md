@@ -1,4 +1,4 @@
-## Using the Anonymous GridFTP server DTN docker image
+## Anonymous GridFTP server DTN docker image
 
 The docker images run a Globus GridFTP server in anonymous read-only access mode,
 and runs the perfSONAR bwctl and owamp tools.
@@ -12,7 +12,7 @@ Run the container
 >docker run -d -P --net=host --privileged -v /var/run -v /home/data:/data dtn
 
 ## Testing
-test the container (from another host with 'globus-data-management-client' installed
+test GridFTP from another host with 'globus-data-management-client' installed
 >globus-url-copy -list ftp://hostname:2811/data/
 
 >globus-url-copy -vb -fast -p 4 ftp://hostname:2811/data/test-file1 file:///dev/null
@@ -30,7 +30,7 @@ See: https://docs.docker.com/articles/networking/
 ## Security:
 make sure the following ports are allowed by the base host
 
-##other useful notes for folks new to docker
+###other useful docker commands 
 >docker ps -a   # show running docker images and their container ID
 
 >docker exec -it ID bash  # attach to running container
