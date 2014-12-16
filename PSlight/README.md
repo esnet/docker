@@ -2,6 +2,7 @@
 
 The docker container runs all perfSONAR light services.
 See: https://code.google.com/p/perfsonar-ps/wiki/Level1and2Install 
+This can be used to run perfSONAR RPMs on a Ubuntu or Debian host.
 
 build the container (in the directory containing 'Dockerfile')
 >docker build -t ps_light .
