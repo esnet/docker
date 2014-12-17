@@ -11,6 +11,7 @@ RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-r
 RUN yum -y install perfSONAR_PS-Bundles-Level1
 RUN mkdir -p /var/log/supervisor 
 ADD supervisord.conf /etc/supervisord.conf
+ADD ls_registration_daemon.conf /opt/perfsonar_ps/ls_registration_daemon/etc/ls_registration_daemon.conf
 
 # The following ports are used:
 # bwctl:4823, 5001-5900, 6001-6200
