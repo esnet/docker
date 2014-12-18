@@ -1,8 +1,9 @@
-## Anonymous GridFTP server DTN docker container
+## Anonymous GridFTP server + quagga DTN docker container
 
-# work in progress!!!
+# work in progress!!! Not yet working or tested
 
 This docker container run a Globus GridFTP server in anonymous read-only access mode,
+quagga (quagga is a routing program to speak ospf, isis, bgp, etc.) and
 and runs the perfSONAR bwctl and owamp tools.
 
 Data is assumed to be in /home/data. Change the path in 'docker run' if that is not the case.
