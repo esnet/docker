@@ -20,7 +20,11 @@ Attach to the running container, and run 'globus-connect-server-setup'
 ># commit changes made by globus-connect-server-setup script
 >docker commit -m "configured globus connect server" ID globus-connect  
 
-
+Next, you need to tell globus.org that this is an anonymous GridFTP server.
+You can use the globus 'cli' for this.
+>ssh username@cli.globusonline.org
+>$ endpoint-add endpointname -p ftp://hostname:2811
+>$ endpoint-activate endpointname -m myproxy.globusonline.org
 
 
 ## Testing
