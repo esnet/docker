@@ -5,13 +5,14 @@
 FROM centos:centos7
 MAINTAINER Brian Tierney <bltierney@es.net>
 
-RUN yum -y update; yum clean all
+RUN yum -y install epel-release
 RUN yum -y install yum-utils net-tools python-setuptools yum-priorities
 RUN easy_install supervisor 
-RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-repo-0.6-1.noarch.rpm
-RUN yum -y install perfsonar-tools
 RUN rpm -hUv http://www.globus.org/ftppub/gt6/installers/repo/globus-toolkit-repo-latest.noarch.rpm
-RUN yum -y install globus-data-management-client globus-data-management-server 
+RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-repo-0.6-1.noarch.rpm
+RUN yum -y update; yum clean all
+RUN yum -y install perfsonar-tools
+RUN yum -y install globus-connect-server 
 RUN mkdir -p /var/log/supervisor 
 RUN adduser gridftp
 ADD supervisord.conf /etc/supervisord.conf
