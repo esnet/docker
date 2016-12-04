@@ -20,7 +20,7 @@ test GridFTP from another host with 'globus-data-management-client' installed
 test perfSONAR tools from another host with owamp and bwctl installed:
 >owping hostname
 
->bwctl -T iperf3 -c hostname
+>bwctl -c hostname
 
 ##Notes:
 
@@ -30,16 +30,4 @@ See: https://docs.docker.com/articles/networking/
 ## Security:
 make sure the following ports are allowed by the base host:
 GridFTP:2811, 50000-51000  ; bwctl:4823, 5001-5900, 6001-6200 ; owamp:861, 8760-9960
-
-###other useful docker commands 
->docker ps -a   # show running docker images and their container ID
-
->docker exec -it ID bash  # attach to running container
-
->docker stop ID
-
->docker rm $(docker ps -a -q ) # remove all old containers
-
->docker images  # list all images
-
 
