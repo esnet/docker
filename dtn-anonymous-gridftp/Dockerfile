@@ -2,16 +2,16 @@
 
 # includes GridFTP and perfSONAR tools
 
-FROM centos:centos6
+FROM centos:centos7
 MAINTAINER Brian Tierney <bltierney@es.net>
 
 RUN yum -y update; yum clean all
-RUN yum -y install traceroute lsb yum-utils net-tools ntp python-setuptools
+RUN yum -y install yum-utils net-tools python-setuptools yum-priorities
 RUN easy_install supervisor 
-RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-repo-0.5-3.noarch.rpm
-RUN yum -y install iperf3 nuttcp bwctl owamp iperf
+RUN rpm -hUv http://software.internet2.edu/rpms/el6/x86_64/main/RPMS/Internet2-repo-0.6-1.noarch.rpm
+RUN yum -y install perfsonar-tools
 RUN rpm -hUv http://www.globus.org/ftppub/gt6/installers/repo/globus-toolkit-repo-latest.noarch.rpm
-RUN yum -y install globus-data-management-client globus-data-management-server globus-xio-udt-driver
+RUN yum -y install globus-data-management-client globus-data-management-server 
 RUN mkdir -p /var/log/supervisor 
 RUN adduser gridftp
 ADD supervisord.conf /etc/supervisord.conf
