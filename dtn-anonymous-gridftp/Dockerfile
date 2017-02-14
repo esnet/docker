@@ -20,6 +20,7 @@ ADD gridftp.conf /etc/gridftp.conf
 
 # The following ports are used:
 # GridFTP:2811, 50000-51000  
+# pscheduler client: 443, 5201
 # bwctl:4823, 5001-5900, 6001-6200
 # owamp:861, 8760-9960
 # ranges not supported, so need to use docker run -P to expose all ports
