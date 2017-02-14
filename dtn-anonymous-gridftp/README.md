@@ -1,15 +1,16 @@
 ## Anonymous GridFTP server DTN docker container
 
 This docker container run a Globus GridFTP server in anonymous read-only access mode,
-and runs the perfSONAR bwctl and owamp tools.
+and also installs the perfSONAR client tools.
 
 Data is assumed to be in /home/data. Change the path in 'docker run' if that is not the case.
 
-build the container (in the directory containing 'Dockerfile')
->docker build -t dtn .
+
+Download the container:
+>docker pull bltierney/dtn-anonymous-gridftp
 
 Run the container
->docker run -d -P --net=host -v /var/run -v /home/data:/data dtn
+>docker run -d -P --net=host -v /var/run -v /home/data:/data bltierney/dtn-anonymous-gridftp
 
 ## Testing
 test GridFTP from another host with 'globus-data-management-client' installed
