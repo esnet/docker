@@ -8,7 +8,7 @@ MAINTAINER Brian Tierney <bltierney@es.net>
 RUN yum -y install epel-release
 RUN yum -y install yum-utils net-tools yum-priorities supervisor
 RUN rpm -hUv http://www.globus.org/ftppub/gt6/installers/repo/globus-toolkit-repo-latest.noarch.rpm
-RUN rpm -hUv http://software.internet2.edu/rpms/el7/x86_64/main/RPMS/Internet2-repo-0.8-1.noarch.rpm
+RUN rpm -hUv http://software.internet2.edu/rpms/el7/x86_64/main/RPMS/perfSONAR-repo-0.8-1.noarch.rpm
 RUN yum -y update; yum clean all
 RUN yum -y install perfsonar-tools
 RUN yum -y install globus-connect-server 
